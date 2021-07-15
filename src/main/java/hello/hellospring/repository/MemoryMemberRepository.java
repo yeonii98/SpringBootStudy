@@ -1,9 +1,12 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//controller를 통해서 외부 요청을 받고 service에서 비즈니스 로직을 만들고 repository에서 데이터를 저장
+@Repository//구현체
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
@@ -24,7 +27,7 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
-                .filter(member -> member.getName().equals(name))//member의 이름이 name인 데이터가 가져옴
+                .filter(member -> member.getName().equals(name))//member의 이름이 name인 데이터가 가져옴, member로 스트림의 요소를 받는다.
                 .findAny();//찾아지는 객체를 순서에 상관없이 반환
     }
 

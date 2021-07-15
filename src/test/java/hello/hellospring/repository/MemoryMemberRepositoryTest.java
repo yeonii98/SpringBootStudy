@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
-
+//테스트를 먼저 만들고 구현 클래스를 만들어서 실행 해보는 것 - TDD
 public class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
-    @AfterEach//메서드가 끝날 때 마다 동작하는 것, 콜백 메서드
+    @AfterEach//메서드가 끝날 때 마다 동작하는 것, 콜백 메서드,
     public void afterEach(){
-        repository.clearStore();
+        repository.clearStore();//테스트가 실행 될 때마다 한 번씩 지우는 과정
     }
 
     @Test
@@ -28,10 +28,10 @@ public class MemoryMemberRepositoryTest {
         Member result = repository.findById(member.getId()).get();
 //        System.out.println("result = " + (result == member)); //result = true
 //        Assertions.assertEquals(reuslt , member);
-        assertThat(member).isEqualTo(null);
+        assertThat(member).isEqualTo(result);
     }
 
-    @Test//옆에 테스트 버튼이 생김, 컨트롤+쉬프트+F10
+    @Test//옆에 테스트 버튼이 생김, 컨트롤+쉬프트+F10 : 테스트 실행
     public void findByName(){
         Member member1 = new Member();
         member1.setName("spring1");
