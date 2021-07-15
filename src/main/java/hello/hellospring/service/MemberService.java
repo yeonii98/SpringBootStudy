@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service//스프링컨테이너에 멤버 서비스 등록
+//@Service//스프링컨테이너에 멤버 서비스 등록
 public class MemberService {
     //컨트롤 + shift + T : Test클래스 자동 생성
     //서비스는 비즈니스에 의존적으로 설계 한다.

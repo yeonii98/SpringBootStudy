@@ -9,7 +9,8 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @Autowired//MemberController가 생성이 될 때, 스프링 빈에 등록 되어 있는 MemberService를 넣어준다. 빈이란? Spring IoC 컨테이너가 관리하는 자바 객체
+    //생성자 주입 권장
+    @Autowired//MemberController가 생성이 될 때, 스프링 빈에 등록 되어 있는 MemberService를 넣어준다. 빈이란? Spring IoC 컨테이너가 관리하는 자바 객체, 스프링이 관리하는 객체에서만 동작
     public MemberController(MemberService memberService){
         this.memberService = memberService;
     }

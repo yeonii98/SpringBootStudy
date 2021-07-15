@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 //controller를 통해서 외부 요청을 받고 service에서 비즈니스 로직을 만들고 repository에서 데이터를 저장
-@Repository//구현체
+//@Repository//구현체
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
