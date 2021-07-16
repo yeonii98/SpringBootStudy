@@ -11,6 +11,4 @@ public interface MemberRepository {
     Optional<Member> findById(Long id);//null 방지, 존재할 수도 있지만 안 할 수도 있는 객체
     Optional<Member> findByName(String name);
     List<Member> findAll();
-
-    void clearStore();
 }
