@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
+@Configuration//@Bean생성을 위한,,
 public class SpringConfig {
 
     private DataSource dataSource;
