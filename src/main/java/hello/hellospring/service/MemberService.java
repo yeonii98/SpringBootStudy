@@ -5,10 +5,12 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional //데이터를 변경하거나 저장 할 때 반드시..
 //@Service//스프링컨테이너에 멤버 서비스 등록
 public class MemberService {
     //컨트롤 + shift + T : Test클래스 자동 생성
